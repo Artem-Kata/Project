@@ -21,14 +21,12 @@ public class AuditService {
         this.auditRepository = auditRepository;
     }
 
-    @Transactional
     public List<AuditDTO> getAllAudits() {
         return auditRepository.findAll().stream()
                 .map(AuditMapper.INSTANCE::toDTO)
                 .collect(Collectors.toList());
     }
 
-    @Transactional
     public AuditDTO getAuditById(Long id) {
         return auditRepository.findById(id)
                 .map(AuditMapper.INSTANCE::toDTO)

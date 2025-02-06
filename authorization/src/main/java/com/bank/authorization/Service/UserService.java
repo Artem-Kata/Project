@@ -22,14 +22,12 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    @Transactional
     public List<UserDTO> getAllUsers() {
         return userRepository.findAll().stream()
                 .map(UserMapper.INSTANCE::toDTO)
                 .collect(Collectors.toList());
     }
 
-    @Transactional
     public UserDTO getUserById(Long id) {
         return userRepository.findById(id)
                 .map(UserMapper.INSTANCE::toDTO)

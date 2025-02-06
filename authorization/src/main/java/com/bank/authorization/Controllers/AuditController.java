@@ -30,7 +30,7 @@ public class AuditController {
         return auditService.createAudit(auditDTO);
     }
 
-    @PutMapping("/{id}")
+    @PatchMapping("/{id}")
     public AuditDTO updateAudit(@PathVariable Long id, @RequestBody AuditDTO auditDTO) {
         return auditService.updateAudit(id, auditDTO);
     }
