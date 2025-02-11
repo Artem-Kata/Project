@@ -14,5 +14,4 @@ public class EurekaServiceApplication {
 		run(EurekaServiceApplication.class, args);
 
 	}
-
 }
